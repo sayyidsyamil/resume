@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name — Resume</title>
+    <style>
+        :root {
+            --text: #333;
+            --link: #2a7ae2;
+            --light: #666;
+            --border: #ddd;
+            --bg: #fff;
+            --max-width: 720px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            font-size: 15px;
+            line-height: 1.6;
+            color: var(--text);
+            background: var(--bg);
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+        }
+
+        /* Header */
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        h1 {
+            font-size: 28px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            letter-spacing: -0.5px;
+        }
+
+        .contact {
+            font-size: 14px;
+            color: var(--light);
+        }
+
+        .contact a {
+            color: var(--link);
+            text-decoration: none;
+            margin: 0 6px;
+        }
+
+        .contact a:hover {
+            text-decoration: underline;
+        }
+
+        .contact span {
+            margin: 0 6px;
+        }
+
+        /* Sections */
+        section {
+            margin-bottom: 28px;
+        }
+
+        h2 {
+            font-size: 18px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 14px;
+            padding-bottom: 6px;
+            border-bottom: 2px solid var(--text);
+            display: inline-block;
+        }
+
+        /* Experience & Education Items */
+        .item {
+            margin-bottom: 18px;
+        }
+
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            flex-wrap: wrap;
+            gap: 4px;
+        }
+
+        .item-title {
+            font-weight: 600;
+            font-size: 15px;
+        }
+
+        .item-org {
+            font-weight: 500;
+            color: var(--light);
+        }
+
+        .item-date {
+            font-size: 13px;
+            color: var(--light);
+            white-space: nowrap;
+        }
+
+        .item-location {
+            font-size: 13px;
+            color: var(--light);
+        }
+
+        .item-desc {
+            margin-top: 6px;
+            padding-left: 0;
+        }
+
+        .item-desc ul {
+            list-style: disc;
+            padding-left: 18px;
+        }
+
+        .item-desc li {
+            margin-bottom: 3px;
+        }
+
+        /* Skills */
+        .skills-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .skill {
+            background: #f5f5f5;
+            padding: 3px 10px;
+            border-radius: 4px;
+            font-size: 13px;
+            color: var(--text);
+        }
+
+        /* Links */
+        a {
+            color: var(--link);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Print Styles */
+        @media print {
+            body {
+                padding: 0;
+                font-size: 12px;
+                line-height: 1.4;
+            }
+
+            .container {
+                max-width: 100%;
+            }
+
+            header {
+                margin-bottom: 20px;
+                padding-bottom: 12px;
+            }
+
+            h1 {
+                font-size: 22px;
+            }
+
+            h2 {
+                font-size: 14px;
+                margin-bottom: 10px;
+                border-bottom-width: 1px;
+            }
+
+            section {
+                margin-bottom: 16px;
+            }
+
+            .item {
+                margin-bottom: 12px;
+            }
+
+            .skill {
+                background: #eee;
+                border: 1px solid #ddd;
+            }
+
+            a {
+                text-decoration: none;
+                color: var(--text);
+            }
+
+            a::after {
+                content: " (" attr(href) ")";
+                font-size: 10px;
+                color: var(--light);
+            }
+
+            .no-print-url::after {
+                content: none !important;
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            body {
+                padding: 20px 16px;
+            }
+
+            h1 {
+                font-size: 24px;
+            }
+
+            .item-header {
+                flex-direction: column;
+            }
+
+            .item-date {
+                margin-top: 2px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        
+        <!-- HEADER -->
+        <header>
+            <h1>Your Name</h1>
+            <div class="contact">
+                <span>City, Country</span> &bull;
+                <a href="mailto:you@email.com">you@email.com</a> &bull;
+                <a href="https://linkedin.com/in/yourprofile">LinkedIn</a> &bull;
+                <a href="https://github.com/yourusername">GitHub</a> &bull;
+                <a href="resume.pdf" class="no-print-url">PDF</a>
+            </div>
+        </header>
+
+        <!-- SUMMARY -->
+        <section>
+            <h2>Summary</h2>
+            <p>
+                Brief professional summary: 2-3 sentences describing your expertise, 
+                years of experience, and what you're looking for. Keep it tight and focused.
+            </p>
+        </section>
+
+        <!-- EXPERIENCE -->
+        <section>
+            <h2>Experience</h2>
+            
+            <div class="item">
+                <div class="item-header">
+                    <div>
+                        <span class="item-title">Senior Role Title</span> — 
+                        <span class="item-org">Company Name</span>
+                    </div>
+                    <span class="item-date">Jan 2022 – Present</span>
+                </div>
+                <div class="item-desc">
+                    <ul>
+                        <li>Key accomplishment with metrics (e.g., "Improved performance by 40%")</li>
+                        <li>Another bullet: what you did, technologies used, impact made</li>
+                        <li>Led initiative X that resulted in Y</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="item">
+                <div class="item-header">
+                    <div>
+                        <span class="item-title">Role Title</span> — 
+                        <span class="item-org">Previous Company</span>
+                    </div>
+                    <span class="item-date">Jun 2019 – Dec 2021</span>
+                </div>
+                <div class="item-desc">
+                    <ul>
+                        <li>Built and shipped feature Z used by X users</li>
+                        <li>Reduced something by Y% through optimization</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- EDUCATION -->
+        <section>
+            <h2>Education</h2>
+            <div class="item">
+                <div class="item-header">
+                    <div>
+                        <span class="item-title">Degree Name</span> — 
+                        <span class="item-org">University Name</span>
+                    </div>
+                    <span class="item-date">2015 – 2019</span>
+                </div>
+                <div class="item-desc">
+                    Relevant coursework, honors, thesis, or GPA if strong.
+                </div>
+            </div>
+        </section>
+
+        <!-- SKILLS -->
+        <section>
+            <h2>Skills</h2>
+            <div class="skills-grid">
+                <span class="skill">Python</span>
+                <span class="skill">JavaScript</span>
+                <span class="skill">React</span>
+                <span class="skill">Node.js</span>
+                <span class="skill">SQL</span>
+                <span class="skill">AWS</span>
+                <span class="skill">Docker</span>
+                <span class="skill">Git</span>
+                <span class="skill">System Design</span>
+            </div>
+        </section>
+
+        <!-- PROJECTS / PUBLICATIONS (Optional) -->
+        <section>
+            <h2>Projects</h2>
+            <div class="item">
+                <div class="item-header">
+                    <span class="item-title"><a href="https://github.com/you/project">Project Name</a></span>
+                    <span class="item-date">2024</span>
+                </div>
+                <div class="item-desc">
+                    One-line description of what it does and technologies used.
+                </div>
+            </div>
+        </section>
+
+    </div>
+</body>
+</html>
