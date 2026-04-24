@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://sayyidsyamil.github.io/resume/sitemap.xml

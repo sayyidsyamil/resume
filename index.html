@@ -3,30 +3,100 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Name — Resume</title>
+    
+    <!-- ===== CORE SEO META ===== -->
+    <title>Your Name — Resume | Software Engineer & Developer</title>
+    <meta name="description" content="Official resume of Your Name — Software Engineer specializing in Python, React, and cloud infrastructure. View experience, skills, and projects.">
+    <meta name="keywords" content="Your Name, software engineer, developer, resume, CV, Python, React, JavaScript, full-stack">
+    <meta name="author" content="Your Name">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <link rel="canonical" href="https://sayyidsyamil.github.io/resume/">
+    
+    <!-- ===== OPEN GRAPH (Facebook, LinkedIn, etc) ===== -->
+    <meta property="og:type" content="profile">
+    <meta property="og:title" content="Your Name — Resume | Software Engineer">
+    <meta property="og:description" content="Official resume of Your Name. View professional experience, technical skills, and projects.">
+    <meta property="og:url" content="https://sayyidsyamil.github.io/resume/">
+    <meta property="og:image" content="https://sayyidsyamil.github.io/resume/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="Your Name Resume">
+    <meta property="profile:first_name" content="Your">
+    <meta property="profile:last_name" content="Name">
+    
+    <!-- ===== TWITTER CARDS ===== -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Your Name — Resume | Software Engineer">
+    <meta name="twitter:description" content="Official resume of Your Name. View professional experience, technical skills, and projects.">
+    <meta name="twitter:image" content="https://sayyidsyamil.github.io/resume/og-image.jpg">
+    
+    <!-- ===== THEME / FAVICON ===== -->
+    <meta name="theme-color" content="#ffffff">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📄</text></svg>">
+    
+    <!-- ===== STRUCTURED DATA (Schema.org Person) ===== -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Your Name",
+        "url": "https://sayyidsyamil.github.io/resume/",
+        "image": "https://sayyidsyamil.github.io/resume/og-image.jpg",
+        "jobTitle": "Software Engineer",
+        "description": "Software Engineer specializing in Python, React, and cloud infrastructure.",
+        "email": "mailto:you@email.com",
+        "sameAs": [
+            "https://linkedin.com/in/yourprofile",
+            "https://github.com/yourusername"
+        ],
+        "alumniOf": {
+            "@type": "EducationalOrganization",
+            "name": "University Name"
+        },
+        "worksFor": {
+            "@type": "Organization",
+            "name": "Current Company Name"
+        }
+    }
+    </script>
+    
+    <!-- ===== STRUCTURED DATA (WebPage) ===== -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Your Name — Resume",
+        "description": "Official resume of Your Name — Software Engineer.",
+        "url": "https://sayyidsyamil.github.io/resume/",
+        "author": {
+            "@type": "Person",
+            "name": "Your Name"
+        }
+    }
+    </script>
+
     <style>
         :root {
-            --text: #333;
-            --link: #2a7ae2;
-            --light: #666;
-            --border: #ddd;
-            --bg: #fff;
-            --max-width: 720px;
+            --text: #1a1a1a;
+            --link: #0066cc;
+            --light: #555;
+            --border: #e0e0e0;
+            --bg: #fafafa;
+            --card-bg: #ffffff;
+            --max-width: 800px;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            font-size: 15px;
-            line-height: 1.6;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            font-size: 16px;
+            line-height: 1.65;
             color: var(--text);
             background: var(--bg);
             padding: 40px 20px;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
 
         .container {
@@ -34,105 +104,148 @@
             margin: 0 auto;
         }
 
-        /* Header */
-        header {
+        /* Skip Link for Accessibility */
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: var(--text);
+            color: white;
+            padding: 8px 16px;
+            z-index: 100;
+            transition: top 0.3s;
+        }
+        .skip-link:focus { top: 0; }
+
+        /* ===== HEADER ===== */
+        header[role="banner"] {
             text-align: center;
-            margin-bottom: 30px;
-            padding-bottom: 20px;
-            border-bottom: 1px solid var(--border);
+            margin-bottom: 40px;
+            padding: 32px 24px;
+            background: var(--card-bg);
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.04);
         }
 
         h1 {
-            font-size: 28px;
-            font-weight: 600;
+            font-size: 32px;
+            font-weight: 700;
             margin-bottom: 8px;
             letter-spacing: -0.5px;
+            color: var(--text);
         }
 
-        .contact {
+        .headline {
+            font-size: 18px;
+            color: var(--light);
+            margin-bottom: 16px;
+            font-weight: 400;
+        }
+
+        address.contact {
+            font-style: normal;
             font-size: 14px;
             color: var(--light);
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 6px 12px;
+            align-items: center;
         }
 
-        .contact a {
+        address.contact a {
             color: var(--link);
             text-decoration: none;
-            margin: 0 6px;
+            font-weight: 500;
         }
 
-        .contact a:hover {
-            text-decoration: underline;
-        }
+        address.contact a:hover { text-decoration: underline; }
 
-        .contact span {
-            margin: 0 6px;
-        }
+        /* ===== MAIN CONTENT ===== */
+        main[role="main"] { }
 
-        /* Sections */
         section {
-            margin-bottom: 28px;
+            margin-bottom: 32px;
+            padding: 24px;
+            background: var(--card-bg);
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.04);
         }
 
         h2 {
-            font-size: 18px;
-            font-weight: 600;
+            font-size: 14px;
+            font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 14px;
-            padding-bottom: 6px;
+            letter-spacing: 1.5px;
+            margin-bottom: 18px;
+            padding-bottom: 8px;
             border-bottom: 2px solid var(--text);
             display: inline-block;
+            color: var(--text);
         }
 
-        /* Experience & Education Items */
-        .item {
-            margin-bottom: 18px;
+        h3 {
+            font-size: 17px;
+            font-weight: 600;
+            margin-bottom: 2px;
+            color: var(--text);
         }
+
+        /* ===== EXPERIENCE & EDUCATION ===== */
+        article.item {
+            margin-bottom: 22px;
+        }
+
+        article.item:last-child { margin-bottom: 0; }
 
         .item-header {
             display: flex;
             justify-content: space-between;
             align-items: baseline;
             flex-wrap: wrap;
-            gap: 4px;
+            gap: 4px 16px;
+            margin-bottom: 6px;
         }
 
-        .item-title {
-            font-weight: 600;
-            font-size: 15px;
-        }
+        .item-title-wrap { }
 
         .item-org {
             font-weight: 500;
             color: var(--light);
+            font-size: 15px;
         }
 
-        .item-date {
+        time.item-date {
             font-size: 13px;
             color: var(--light);
             white-space: nowrap;
+            font-weight: 500;
         }
 
         .item-location {
             font-size: 13px;
             color: var(--light);
+            margin-top: 2px;
         }
 
         .item-desc {
-            margin-top: 6px;
-            padding-left: 0;
+            margin-top: 8px;
+            color: var(--text);
         }
 
         .item-desc ul {
             list-style: disc;
-            padding-left: 18px;
+            padding-left: 20px;
         }
 
         .item-desc li {
-            margin-bottom: 3px;
+            margin-bottom: 5px;
+            padding-left: 4px;
         }
 
-        /* Skills */
+        /* ===== SKILLS ===== */
         .skills-grid {
             display: flex;
             flex-wrap: wrap;
@@ -140,57 +253,88 @@
         }
 
         .skill {
-            background: #f5f5f5;
-            padding: 3px 10px;
-            border-radius: 4px;
-            font-size: 13px;
+            background: #f0f0f0;
+            padding: 5px 12px;
+            border-radius: 6px;
+            font-size: 14px;
             color: var(--text);
+            font-weight: 500;
+            border: 1px solid var(--border);
         }
 
-        /* Links */
+        /* ===== PROJECTS ===== */
+        .project-link {
+            font-weight: 600;
+        }
+
+        /* ===== FOOTER ===== */
+        footer[role="contentinfo"] {
+            text-align: center;
+            padding: 24px;
+            color: var(--light);
+            font-size: 13px;
+            margin-top: 16px;
+        }
+
+        footer a { color: var(--light); text-decoration: underline; }
+
+        /* ===== LINKS ===== */
         a {
             color: var(--link);
             text-decoration: none;
         }
 
-        a:hover {
-            text-decoration: underline;
+        a:hover { text-decoration: underline; }
+
+        a:focus-visible {
+            outline: 2px solid var(--link);
+            outline-offset: 2px;
+            border-radius: 2px;
         }
 
-        /* Print Styles */
+        /* ===== PRINT STYLES ===== */
         @media print {
             body {
                 padding: 0;
                 font-size: 12px;
                 line-height: 1.4;
+                background: white;
             }
 
-            .container {
-                max-width: 100%;
-            }
+            .container { max-width: 100%; }
 
-            header {
+            .skip-link { display: none; }
+
+            header[role="banner"] {
                 margin-bottom: 20px;
-                padding-bottom: 12px;
+                padding: 0 0 16px 0;
+                background: white;
+                border: none;
+                border-bottom: 1px solid #ccc;
+                box-shadow: none;
+                border-radius: 0;
             }
 
-            h1 {
-                font-size: 22px;
-            }
+            h1 { font-size: 24px; }
 
             h2 {
-                font-size: 14px;
-                margin-bottom: 10px;
+                font-size: 13px;
+                margin-bottom: 12px;
                 border-bottom-width: 1px;
             }
 
+            h3 { font-size: 14px; }
+
             section {
-                margin-bottom: 16px;
+                margin-bottom: 18px;
+                padding: 0;
+                background: white;
+                border: none;
+                box-shadow: none;
+                border-radius: 0;
             }
 
-            .item {
-                margin-bottom: 12px;
-            }
+            article.item { margin-bottom: 14px; }
 
             .skill {
                 background: #eee;
@@ -202,146 +346,172 @@
                 color: var(--text);
             }
 
-            a::after {
+            a[href]::after {
                 content: " (" attr(href) ")";
-                font-size: 10px;
-                color: var(--light);
+                font-size: 9px;
+                color: #888;
+                word-break: break-all;
             }
 
-            .no-print-url::after {
-                content: none !important;
-            }
+            a.no-print-url[href]::after,
+            .skip-link,
+            footer { content: none !important; display: none; }
         }
 
-        /* Responsive */
-        @media (max-width: 600px) {
-            body {
-                padding: 20px 16px;
-            }
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 640px) {
+            body { padding: 16px 12px; }
 
-            h1 {
-                font-size: 24px;
-            }
+            h1 { font-size: 26px; }
 
-            .item-header {
-                flex-direction: column;
-            }
+            .headline { font-size: 16px; }
 
-            .item-date {
-                margin-top: 2px;
-            }
+            section { padding: 18px 16px; }
+
+            .item-header { flex-direction: column; gap: 2px; }
+
+            time.item-date { margin-top: 2px; }
         }
     </style>
 </head>
 <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
     <div class="container">
         
-        <!-- HEADER -->
-        <header>
+        <!-- ===== HEADER ===== -->
+        <header role="banner">
             <h1>Your Name</h1>
-            <div class="contact">
-                <span>City, Country</span> &bull;
-                <a href="mailto:you@email.com">you@email.com</a> &bull;
-                <a href="https://linkedin.com/in/yourprofile">LinkedIn</a> &bull;
-                <a href="https://github.com/yourusername">GitHub</a> &bull;
-                <a href="resume.pdf" class="no-print-url">PDF</a>
-            </div>
+            <p class="headline">Software Engineer & Full-Stack Developer</p>
+            <address class="contact" aria-label="Contact information">
+                <span>Kuala Lumpur, Malaysia</span>
+                <span aria-hidden="true">&bull;</span>
+                <a href="mailto:you@email.com" aria-label="Email Your Name">you@email.com</a>
+                <span aria-hidden="true">&bull;</span>
+                <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile">LinkedIn</a>
+                <span aria-hidden="true">&bull;</span>
+                <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile">GitHub</a>
+                <span aria-hidden="true">&bull;</span>
+                <a href="resume.pdf" class="no-print-url" aria-label="Download PDF Resume">PDF</a>
+            </address>
         </header>
 
-        <!-- SUMMARY -->
-        <section>
-            <h2>Summary</h2>
-            <p>
-                Brief professional summary: 2-3 sentences describing your expertise, 
-                years of experience, and what you're looking for. Keep it tight and focused.
-            </p>
-        </section>
+        <!-- ===== MAIN CONTENT ===== -->
+        <main id="main-content" role="main">
 
-        <!-- EXPERIENCE -->
-        <section>
-            <h2>Experience</h2>
-            
-            <div class="item">
-                <div class="item-header">
-                    <div>
-                        <span class="item-title">Senior Role Title</span> — 
-                        <span class="item-org">Company Name</span>
+            <!-- SUMMARY -->
+            <section aria-labelledby="summary-heading">
+                <h2 id="summary-heading">Summary</h2>
+                <p>
+                    Your Name is a software engineer with expertise in building scalable web applications 
+                    using Python, JavaScript, and modern cloud infrastructure. Passionate about clean code, 
+                    system design, and delivering products that solve real problems.
+                </p>
+            </section>
+
+            <!-- EXPERIENCE -->
+            <section aria-labelledby="experience-heading">
+                <h2 id="experience-heading">Experience</h2>
+                
+                <article class="item">
+                    <div class="item-header">
+                        <div class="item-title-wrap">
+                            <h3>Senior Software Engineer</h3>
+                            <span class="item-org">Company Name</span>
+                        </div>
+                        <time class="item-date" datetime="2022-01">Jan 2022 – Present</time>
                     </div>
-                    <span class="item-date">Jan 2022 – Present</span>
-                </div>
-                <div class="item-desc">
-                    <ul>
-                        <li>Key accomplishment with metrics (e.g., "Improved performance by 40%")</li>
-                        <li>Another bullet: what you did, technologies used, impact made</li>
-                        <li>Led initiative X that resulted in Y</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="item">
-                <div class="item-header">
-                    <div>
-                        <span class="item-title">Role Title</span> — 
-                        <span class="item-org">Previous Company</span>
+                    <div class="item-location">Kuala Lumpur, Malaysia</div>
+                    <div class="item-desc">
+                        <ul>
+                            <li>Led architecture redesign improving system performance by 40% and reducing cloud costs by 25%</li>
+                            <li>Built and deployed microservices handling 1M+ daily requests using Python, FastAPI, and AWS</li>
+                            <li>Mentored team of 4 engineers on best practices for testing, CI/CD, and code review</li>
+                        </ul>
                     </div>
-                    <span class="item-date">Jun 2019 – Dec 2021</span>
-                </div>
-                <div class="item-desc">
-                    <ul>
-                        <li>Built and shipped feature Z used by X users</li>
-                        <li>Reduced something by Y% through optimization</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
+                </article>
 
-        <!-- EDUCATION -->
-        <section>
-            <h2>Education</h2>
-            <div class="item">
-                <div class="item-header">
-                    <div>
-                        <span class="item-title">Degree Name</span> — 
-                        <span class="item-org">University Name</span>
+                <article class="item">
+                    <div class="item-header">
+                        <div class="item-title-wrap">
+                            <h3>Software Engineer</h3>
+                            <span class="item-org">Previous Company</span>
+                        </div>
+                        <time class="item-date" datetime="2019-06">Jun 2019 – Dec 2021</time>
                     </div>
-                    <span class="item-date">2015 – 2019</span>
-                </div>
-                <div class="item-desc">
-                    Relevant coursework, honors, thesis, or GPA if strong.
-                </div>
-            </div>
-        </section>
+                    <div class="item-location">Kuala Lumpur, Malaysia</div>
+                    <div class="item-desc">
+                        <ul>
+                            <li>Developed customer-facing dashboard used by 50,000+ monthly active users with React and Node.js</li>
+                            <li>Reduced API response time by 60% through query optimization and Redis caching layer</li>
+                            <li>Collaborated with product team to ship 12 major features in agile 2-week sprints</li>
+                        </ul>
+                    </div>
+                </article>
+            </section>
 
-        <!-- SKILLS -->
-        <section>
-            <h2>Skills</h2>
-            <div class="skills-grid">
-                <span class="skill">Python</span>
-                <span class="skill">JavaScript</span>
-                <span class="skill">React</span>
-                <span class="skill">Node.js</span>
-                <span class="skill">SQL</span>
-                <span class="skill">AWS</span>
-                <span class="skill">Docker</span>
-                <span class="skill">Git</span>
-                <span class="skill">System Design</span>
-            </div>
-        </section>
+            <!-- EDUCATION -->
+            <section aria-labelledby="education-heading">
+                <h2 id="education-heading">Education</h2>
+                <article class="item">
+                    <div class="item-header">
+                        <div class="item-title-wrap">
+                            <h3>Bachelor of Computer Science</h3>
+                            <span class="item-org">University of Malaya</span>
+                        </div>
+                        <time class="item-date" datetime="2015">2015 – 2019</time>
+                    </div>
+                    <div class="item-desc">
+                        <p>First Class Honours. Relevant coursework: Algorithms, Data Structures, Software Engineering, Machine Learning.</p>
+                    </div>
+                </article>
+            </section>
 
-        <!-- PROJECTS / PUBLICATIONS (Optional) -->
-        <section>
-            <h2>Projects</h2>
-            <div class="item">
-                <div class="item-header">
-                    <span class="item-title"><a href="https://github.com/you/project">Project Name</a></span>
-                    <span class="item-date">2024</span>
+            <!-- SKILLS -->
+            <section aria-labelledby="skills-heading">
+                <h2 id="skills-heading">Skills</h2>
+                <div class="skills-grid" role="list" aria-label="Technical skills">
+                    <span class="skill" role="listitem">Python</span>
+                    <span class="skill" role="listitem">JavaScript</span>
+                    <span class="skill" role="listitem">TypeScript</span>
+                    <span class="skill" role="listitem">React</span>
+                    <span class="skill" role="listitem">Node.js</span>
+                    <span class="skill" role="listitem">SQL</span>
+                    <span class="skill" role="listitem">AWS</span>
+                    <span class="skill" role="listitem">Docker</span>
+                    <span class="skill" role="listitem">Git</span>
+                    <span class="skill" role="listitem">System Design</span>
+                    <span class="skill" role="listitem">FastAPI</span>
+                    <span class="skill" role="listitem">PostgreSQL</span>
                 </div>
-                <div class="item-desc">
-                    One-line description of what it does and technologies used.
-                </div>
-            </div>
-        </section>
+            </section>
+
+            <!-- PROJECTS -->
+            <section aria-labelledby="projects-heading">
+                <h2 id="projects-heading">Projects</h2>
+                <article class="item">
+                    <div class="item-header">
+                        <h3><a href="https://github.com/you/project" target="_blank" rel="noopener noreferrer" class="project-link">Open Source Project Name</a></h3>
+                        <time class="item-date" datetime="2024">2024</time>
+                    </div>
+                    <div class="item-desc">
+                        <p>Real-time data processing pipeline built with Python and Apache Kafka. Processes 10,000+ events per second with sub-100ms latency.</p>
+                    </div>
+                </article>
+            </section>
+
+        </main>
+
+        <!-- ===== FOOTER ===== -->
+        <footer role="contentinfo">
+            <p>&copy; <span id="year">2025</span> Your Name. All rights reserved.</p>
+            <p>Built with plain HTML & CSS. <a href="https://github.com/sayyidsyamil/resume" target="_blank" rel="noopener noreferrer">View source on GitHub</a>.</p>
+        </footer>
 
     </div>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
 </body>
 </html>

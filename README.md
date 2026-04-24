@@ -10,6 +10,7 @@ A clean, minimal, single-page resume built with plain HTML and CSS.
 - Responsive design (mobile & desktop)
 - Print-friendly — press `Ctrl+P` / `Cmd+P` to save as PDF
 - Easy to update — edit text directly in `index.html`
+- SEO-optimized with structured data, meta tags, and semantic HTML
 
 ## How to Update
 
