@@ -316,12 +316,12 @@
 
         /* ===== PRINT / ATS MODE ===== */
         @media print {
-            @page { margin: 16mm 18mm; }
+            @page { margin: 0; }
 
             body {
-                padding: 0;
-                font-size: 11.5px;
-                line-height: 1.5;
+                padding: 14mm 18mm;
+                font-size: 11px;
+                line-height: 1.45;
                 color: #000;
                 background: #fff;
                 opacity: 1;
@@ -331,11 +331,11 @@
 
             header {
                 position: static;
-                margin-bottom: 24px;
+                margin-bottom: 20px;
             }
-            .name { font-size: 22px; font-weight: 700; color: #000; }
-            .subtitle { color: #333; }
-            .contact-line { color: #555; }
+            .name { font-size: 20px; font-weight: 700; color: #000; }
+            .subtitle { font-size: 13px; color: #333; }
+            .contact-line { font-size: 11px; color: #555; }
             .contact-line a { color: #333; }
 
             .theme-toggle,
@@ -344,29 +344,33 @@
             }
 
             section {
-                margin-bottom: 20px;
+                margin-bottom: 16px;
                 opacity: 1;
                 animation: none;
                 transform: none;
             }
 
+            section[aria-labelledby="college-heading"] {
+                display: none !important;
+            }
+
             h2 {
-                font-size: 11px;
+                font-size: 10px;
                 font-weight: 700;
                 color: #555;
                 border-bottom-color: #ccc;
-                margin-bottom: 12px;
-                padding-bottom: 4px;
+                margin-bottom: 10px;
+                padding-bottom: 3px;
             }
 
-            h3 { font-size: 13px; font-weight: 600; color: #000; }
-            .entry-org { font-size: 12px; color: #333; }
-            .entry-meta { font-size: 11px; color: #666; }
-            .entry-body { font-size: 11.5px; color: #333; line-height: 1.5; }
-            .entry-body li { margin-bottom: 3px; }
+            h3 { font-size: 12px; font-weight: 600; color: #000; }
+            .entry-org { font-size: 11px; color: #333; }
+            .entry-meta { font-size: 10px; color: #666; }
+            .entry-body { font-size: 11px; color: #333; line-height: 1.45; }
+            .entry-body li { margin-bottom: 2px; }
 
             .entry {
-                margin-bottom: 14px;
+                margin-bottom: 12px;
                 transition: none;
                 transform: none;
             }
@@ -402,11 +406,11 @@
             }
 
             footer {
-                margin-top: 28px;
-                padding-top: 10px;
+                margin-top: 20px;
+                padding-top: 8px;
                 border-top-color: #ccc;
                 color: #888;
-                font-size: 10px;
+                font-size: 9px;
             }
         }
 
