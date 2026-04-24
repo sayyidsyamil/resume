@@ -64,6 +64,10 @@
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
             font-size: 15px;
@@ -72,6 +76,14 @@
             background: var(--bg);
             padding: 48px 24px;
             -webkit-font-smoothing: antialiased;
+            transition: background-color 0.4s ease, color 0.4s ease;
+            opacity: 0;
+            animation: fadeInPage 0.6s ease forwards;
+        }
+
+        @keyframes fadeInPage {
+            from { opacity: 0; transform: translateY(8px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         .container {
@@ -84,6 +96,7 @@
             text-decoration: underline;
             text-underline-offset: 3px;
             text-decoration-color: #bbb;
+            transition: text-decoration-color 0.25s ease, color 0.25s ease;
         }
         a:hover { text-decoration-color: var(--text); }
 
@@ -115,12 +128,28 @@
             color: var(--muted);
             text-decoration: none;
             margin-right: 14px;
+            transition: color 0.25s ease;
         }
         .contact-line a:hover { text-decoration: underline; color: var(--text); }
 
         /* ===== SECTIONS ===== */
         section {
             margin-bottom: 40px;
+            opacity: 0;
+            animation: fadeInUp 0.5s ease forwards;
+        }
+
+        section:nth-child(1) { animation-delay: 0.1s; }
+        section:nth-child(2) { animation-delay: 0.2s; }
+        section:nth-child(3) { animation-delay: 0.3s; }
+        section:nth-child(4) { animation-delay: 0.4s; }
+        section:nth-child(5) { animation-delay: 0.5s; }
+        section:nth-child(6) { animation-delay: 0.6s; }
+        section:nth-child(7) { animation-delay: 0.7s; }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(12px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         h2 {
@@ -149,8 +178,12 @@
         /* ===== ENTRIES ===== */
         .entry {
             margin-bottom: 22px;
+            transition: transform 0.25s ease, opacity 0.25s ease;
         }
         .entry:last-child { margin-bottom: 0; }
+        .entry:hover {
+            transform: translateX(2px);
+        }
 
         .entry-header {
             display: flex;
@@ -205,6 +238,10 @@
             padding: 3px 10px;
             border-radius: 4px;
             font-size: 13px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+        .inline-list span:hover {
+            transform: translateY(-1px);
         }
 
         /* ===== DARK MODE TOGGLE ===== */
@@ -220,11 +257,19 @@
             font-size: 16px;
             line-height: 1;
             color: var(--muted);
-            transition: all 0.2s ease;
+            transition: border-color 0.3s ease, color 0.3s ease, transform 0.3s ease, background-color 0.3s ease;
         }
         .theme-toggle:hover {
             border-color: var(--light);
             color: var(--text);
+            background-color: var(--tag-bg);
+        }
+        .theme-toggle:active {
+            transform: scale(0.92);
+        }
+        #theme-icon {
+            display: inline-block;
+            transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
         }
 
         header {
@@ -585,15 +630,20 @@
             }
             
             toggle.addEventListener('click', function() {
-                if (html.getAttribute('data-theme') === 'dark') {
-                    html.removeAttribute('data-theme');
-                    localStorage.setItem('theme', 'light');
-                    icon.innerHTML = '&#9788;';
-                } else {
-                    html.setAttribute('data-theme', 'dark');
-                    localStorage.setItem('theme', 'dark');
-                    icon.innerHTML = '&#9790;';
-                }
+                icon.style.transform = 'rotate(180deg) scale(0.8)';
+                
+                setTimeout(function() {
+                    if (html.getAttribute('data-theme') === 'dark') {
+                        html.removeAttribute('data-theme');
+                        localStorage.setItem('theme', 'light');
+                        icon.innerHTML = '&#9788;';
+                    } else {
+                        html.setAttribute('data-theme', 'dark');
+                        localStorage.setItem('theme', 'dark');
+                        icon.innerHTML = '&#9790;';
+                    }
+                    icon.style.transform = 'rotate(0deg) scale(1)';
+                }, 150);
             });
         })();
     </script>
