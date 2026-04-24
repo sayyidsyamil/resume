@@ -48,7 +48,18 @@
             --border: #e5e5e5;
             --link: #0066cc;
             --bg: #fff;
+            --tag-bg: #f5f5f5;
             --max-width: 680px;
+        }
+
+        [data-theme="dark"] {
+            --text: #e5e5e5;
+            --muted: #a0a0a0;
+            --light: #707070;
+            --border: #333;
+            --link: #58a6ff;
+            --bg: #0d1117;
+            --tag-bg: #1a1a1a;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -190,10 +201,34 @@
             color: var(--muted);
         }
         .inline-list span {
-            background: #f5f5f5;
+            background: var(--tag-bg);
             padding: 3px 10px;
             border-radius: 4px;
             font-size: 13px;
+        }
+
+        /* ===== DARK MODE TOGGLE ===== */
+        .theme-toggle {
+            position: absolute;
+            top: 0;
+            right: 0;
+            background: none;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 6px 10px;
+            cursor: pointer;
+            font-size: 16px;
+            line-height: 1;
+            color: var(--muted);
+            transition: all 0.2s ease;
+        }
+        .theme-toggle:hover {
+            border-color: var(--light);
+            color: var(--text);
+        }
+
+        header {
+            position: relative;
         }
 
         /* ===== FOOTER ===== */
@@ -241,6 +276,9 @@
     <div class="container">
         
         <header>
+            <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+                <span id="theme-icon">&#9788;</span>
+            </button>
             <div class="name">Sayyid Syamil</div>
             <div class="subtitle">
                 Computer Science (AI) student at University of Malaya. Interested in technology consulting, AI infrastructure, energy, and institutional investment.
@@ -531,5 +569,33 @@
         </footer>
 
     </div>
+
+    <script>
+        (function() {
+            const toggle = document.getElementById('theme-toggle');
+            const icon = document.getElementById('theme-icon');
+            const html = document.documentElement;
+            
+            const saved = localStorage.getItem('theme');
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            
+            if (saved === 'dark' || (!saved && prefersDark)) {
+                html.setAttribute('data-theme', 'dark');
+                icon.innerHTML = '&#9790;';
+            }
+            
+            toggle.addEventListener('click', function() {
+                if (html.getAttribute('data-theme') === 'dark') {
+                    html.removeAttribute('data-theme');
+                    localStorage.setItem('theme', 'light');
+                    icon.innerHTML = '&#9788;';
+                } else {
+                    html.setAttribute('data-theme', 'dark');
+                    localStorage.setItem('theme', 'dark');
+                    icon.innerHTML = '&#9790;';
+                }
+            });
+        })();
+    </script>
 </body>
 </html>
